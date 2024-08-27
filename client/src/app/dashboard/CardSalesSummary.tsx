@@ -17,11 +17,9 @@ const CardSalesSummary = () => {
 
   const [timeframe, setTimeframe] = useState("weekly");
 
-  const totalValueSum =
-    salesData.reduce((acc, curr) => acc + curr.totalValue, 0) || 0;
+  const totalValueSum = salesData.reduce((acc, curr) => acc + curr.totalValue, 0) || 0;
 
-  const averageChangePercentage =
-    salesData.reduce((acc, curr, _, array) => {
+  const averageChangePercentage = salesData.reduce((acc, curr, _, array) => {
       return acc + curr.changePercentage! / array.length;
     }, 0) || 0;
 
@@ -39,6 +37,7 @@ const CardSalesSummary = () => {
 
   if (isError) {
     return <div className="m-5">Failed to fetch data</div>;
+    
   }
 
   return (
