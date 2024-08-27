@@ -7,6 +7,7 @@ import Rating from '../(components)/Rating';
 
 const CardPopularProducts = () => {
     const { data: dashboardMetrics, isLoading} = useGetDashboardMetricsQuery();
+    console.log(dashboardMetrics);
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
         {isLoading ? (
@@ -19,6 +20,7 @@ const CardPopularProducts = () => {
                 <hr />
                 <div className="overflow-auto h-full">
                     {dashboardMetrics?.popularProducts.map((product) => (
+                       
                         <div
                             key={product.productId}
                             className='flex items-center justify-between gap-3 px-5 py-7 border-b'
