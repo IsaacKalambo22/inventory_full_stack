@@ -1,11 +1,14 @@
 "use client"
 
-type Props = {}
+import { useGetProductsQuery } from "@/state/api"
+ 
 
-const page = (props: Props) => {
+const Inventory = () => {
+    const { data: products, isError, isLoading} = useGetProductsQuery();
+    console.log("products:", products);
   return (
-    <div>page</div>
+    <div>Inventory</div>
   )
 }
 
-export default page
+export default Inventory

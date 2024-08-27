@@ -32,6 +32,7 @@ const getProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
 exports.getProducts = getProducts;
 const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        // bodyParse allows us to grab the request and parse it in a format that we can use 
         const { productId, name, price, rating, stockQuantity } = req.body;
         const product = yield prisma.products.create({
             data: {
