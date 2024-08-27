@@ -49,9 +49,9 @@ export interface DashboardMetrics {
     expenseSummary: ExpenseSummary[];
     expenseByCategorySummary: ExpenseByCategorySummary[];
 }
-
+// const BASE_URL="http://localhost:8000"
 export const api = createApi ({
-    baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL}),
+    baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_BASE_URL}),
     reducerPath: "api",
     tagTypes: ["DashboardMetrics", "Products"],
     endpoints: (build) => ({
@@ -63,17 +63,19 @@ export const api = createApi ({
         getProducts: build.query<Product[], string | void>({
             query: (search) => ({
               url: "/products",
-              params: search ? { search } : {},
+            //   params: search ? { search } : {},
             }),
-            providesTags: ["Products"],
+            providesTags: ["Products"]
+
           }),
-          createProduct: build.mutation<Product, NewProduct>({
+        createProduct: build.mutation<Product, NewProduct>({
             query: (newProduct) => ({
               url: "/products",
               method: "POST",
               body: newProduct,
             }),
-            invalidatesTags: ["Products"],
+            invalidatesTags: ["Products"]
+
           }),
 
 
@@ -83,4 +85,4 @@ export const api = createApi ({
     }),
 });
 
-export const { useGetDashboardMetricsQuery, useGetProductsQuery, useCreateProductMutation} = api;
+export const { useGetDashboardMetricsQuery, useGetProductsQuery, useCreateProductMutation, } = api;

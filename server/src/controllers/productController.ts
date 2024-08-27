@@ -27,6 +27,7 @@ export const createProduct = async (
   res: Response
 ): Promise<void> => {
   try {
+    // bodyParse allows us to grab the request and parse it in a format that we can use 
     const { productId, name, price, rating, stockQuantity } = req.body;
     const product = await prisma.products.create({
       data: {

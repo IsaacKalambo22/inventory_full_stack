@@ -20,7 +20,7 @@ model Users {
 }
 
 model Products {
-  productId     String      @id
+  productId     String @id
   name          String
   price         Float
   rating        Float?
@@ -30,7 +30,7 @@ model Products {
 }
 
 model Sales {
-  saleId      String   @id
+  saleId      String @id
   productId   String
   timestamp   DateTime
   quantity    Int
@@ -40,7 +40,7 @@ model Sales {
 }
 
 model Purchases {
-  purchaseId String   @id
+  purchaseId String @id
   productId  String
   timestamp  DateTime
   quantity   Int
@@ -50,35 +50,35 @@ model Purchases {
 }
 
 model Expenses {
-  expenseId String   @id
+  expenseId String @id
   category  String
   amount    Float
   timestamp DateTime
 }
 
 model SalesSummary {
-  salesSummaryId   String   @id
+  salesSummaryId   String @id
   totalValue       Float
   changePercentage Float?
   date             DateTime
 }
 
 model PurchaseSummary {
-  purchaseSummaryId String   @id
+  purchaseSummaryId String @id
   totalPurchased    Float
   changePercentage  Float?
   date              DateTime
 }
 
 model ExpenseSummary {
-  expenseSummaryId  String              @id
+  expenseSummaryId  String @id
   totalExpenses     Float
   date              DateTime
   ExpenseByCategory ExpenseByCategory[]
 }
 
 model ExpenseByCategory {
-  expenseByCategoryId String         @id
+  expenseByCategoryId String @id
   expenseSummaryId    String
   category            String
   amount              BigInt

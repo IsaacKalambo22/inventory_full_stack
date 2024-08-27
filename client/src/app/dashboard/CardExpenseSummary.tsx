@@ -60,12 +60,12 @@ const CardExpenseSummary = () => {
           <div className="xl:flex justify-between pr-7">
             {/* CHART */}
             <div className="relative basis-3/5">
-              <ResponsiveContainer width="100%" height={140}>
+              <ResponsiveContainer width="100%" height={120}>
                 <PieChart>
                   <Pie
                     data={expenseCategories}
-                    innerRadius={50}
-                    outerRadius={60}
+                    innerRadius={40}
+                    outerRadius={50}
                     fill="#8884d8"
                     dataKey="value"
                     nameKey="name"
@@ -88,7 +88,7 @@ const CardExpenseSummary = () => {
               </div>
             </div>
             {/* LABELS */}
-            <ul className="flex flex-col justify-around items-center xl:items-start py-5 gap-3">
+            <ul className="flex flex-col justify-around items-center xl:items-start py-2 gap-2">
               {expenseCategories.map((entry, index) => (
                 <li
                   key={`legend-${index}`}
@@ -107,8 +107,8 @@ const CardExpenseSummary = () => {
           <div>
             <hr />
             {expenseSummary && (
-              <div className="mt-3 flex justify-between items-center px-7 mb-4">
-                <div className="pt-2">
+              <div className="mt-0 flex justify-between items-center px-7 mb-2">
+                <div className="pt-0">
                   <p className="text-sm">
                     Average:{" "}
                     <span className="font-semibold">
