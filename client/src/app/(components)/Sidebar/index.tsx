@@ -61,7 +61,7 @@ const Sidebar = () => {
           alt="aikcode-logo"
           width={35}
           height={35}
-          className="rounded w-8"
+          className="rounded w-10"
         />
             <h1 className={`${isSidebarCollapsed ? "hidden" : "block" } font-extrabold text-2xl`}>AIKCODE</h1>
             <button className='md:hidden px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100' onClick={toggleSidebar}>
