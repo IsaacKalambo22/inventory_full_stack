@@ -5,6 +5,7 @@ import { Bell, Menu, Moon, Settings, Sun } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
+import isaac from '/public/assets/profile.png';
 
 
 
@@ -74,13 +75,13 @@ const Navbar = () => {
           </div>
           <hr className='w-0 h-7 border border-solid border-1 border-gray-300 mx-3'/>
           <div className="flex items-center gap-3 cursor-pointer">
-          {/* <Image
-              src="https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/profile.png"
+          <Image
+              src={isaac}
               alt="Profile"
-              width={50}
-              height={50}
+              width={30}
+              height={30}
               className="rounded-full h-full object-cover"
-            /> */}
+            />
             <span className='font-semibold'>AIK</span>
           </div>
         </div>
